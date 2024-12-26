@@ -1,0 +1,211 @@
+version: '3'
+services:
+  consul:
+    image: 'hub.atomgit.com/amd64/consul:1.13.9'
+    ports:
+      - 8500:8500
+  mysql:
+    image: "hub.atomgit.com/amd64/mysql:5.7.43"
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=duibuqi.123
+      - MYSQL_USER=root
+      #- MYSQL_PASSWORD=duibuqi.123
+      - MYSQL_HOST=192.168.28.133
+  #   volumes:
+  #     - ./db/sql/ini:/docker-entrypoint-initdb.d
+  #   healthcheck:
+  #     test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "u", "root", "-proot"]
+  #     interval: 20s
+  #     timeout: 10s
+  #     retries: 5
+  #     start_period: 2m
+  # redis:
+  #   image: "hub.atomgit.com/amd64/redis:7.0.13"
+  #   ports:
+  #     - 6379:6379
+  #   environment:
+  #     - REDIS_HOST=192.168.28.133
+  #     - REDIS_USER=
+  #     - REDIS_PASSWORD=
+  nats:
+    image: "hub.atomgit.com/amd64/nats:2.9.22"
+    ports:
+      - "4222:4222"
+      - "8222:8222"
+
+  # prometheus:
+  #     image: prom/prometheus:latest
+  #     volumes:
+  #       - ./deploy/config/prometheus.yml:/etc/prometheus/prometheus.yml
+  #     command:
+  #       - "--config.file=/etc/prometheus/prometheus.yml"
+  #     ports:
+  #       - "9090:9090"
+
+  # grafana:
+  #     image: grafana/grafana:latest
+  #     environment:
+  #       - GF_AUTH_ANONYMOUS_ENABLED=true
+  #       - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+  #       - GF_AUTH_DISABLE_LOGIN_FORM=true
+  #     ports:
+  #       - "3000:3000"
+
+
+  # jaeger-all-in-one:
+  #   contrainer_name: jaeger-all-in-one
+  #   image: jaegertracing/all-in-one:latest
+  #   ports:
+  #     - "16686:16686"
+  #     - "4317:4317"
+  #     - "4318:4318"
+  # loki:
+  #   image: grafana/loki:2.9.2
+  #   volumes:
+  #     - ./deploy/config/loki.yml:/etc/loki/local-config.yaml
+  #   command: -config.file=/etc/loki/local-config.yaml
+  #   ports:
+  #     - "3100:3100"
+
+  # promtail:
+  #   image: grafana/promtail:2.9.2
+  #   volumes:
+  #     - ./deploy/config/promtail.yml:/etc/promtail/config.yml
+  #     - ./app/frontend/log:/logs/frontend
+  #   command: -config.file=/etc/promtail/config.yml
+
+  # frontend:
+  #   image: "frontend:latest"
+  #   environment:
+  #     - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http//127.0.0.1:4317
+  #     - OTEL_EXPORTER_OTLP_INSECURE=true
+  #     - SESSION_SECRET=FASDK23JKFDAS
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     - consul
+  #     - redis
+  #   volumes:
+  #     - ./app/frontend/conf/dev:/opt/gomall/frontend/conf/dev
+
+  # product:
+  #   image: "product:latest"
+  #   environment:
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_HOST=mysql
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     consul: 
+  #       condition: service_started
+  #     mysql: 
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./app/product/conf/dev:/opt/gomall/product/conf/dev
+
+  # user:
+  #   image: "user:latest"
+  #   environment:
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_HOST=mysql
+  #     - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=jaeger-all-in-one:4317
+  #     - OTEL_EXPORTER_OTLP_INSECURE=true
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     consul: 
+  #       condition: service_started
+  #     mysql: 
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./app/user/conf/dev:/opt/gomall/user/conf/dev
+
+  # cart:
+  #   image: "cart:latest"
+  #   environment:
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_HOST=mysql
+  #     - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=jaeger-all-in-one:4317
+  #     - OTEL_EXPORTER_OTLP_INSECURE=true
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     consul: 
+  #       condition: service_started
+  #     mysql: 
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./app/cart/conf/dev:/opt/gomall/cart/conf/dev
+
+  # checkout:
+  #   image: "checkout:latest"
+  #   environment:
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_HOST=mysql
+  #     - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=jaeger-all-in-one:4317
+  #     - OTEL_EXPORTER_OTLP_INSECURE=true
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     consul: 
+  #       condition: service_started
+  #     mysql: 
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./app/checkout/conf/dev:/opt/gomall/checkout/conf/dev
+  
+  # email:
+  #   image: "email:latest"
+  #   environment:
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_HOST=mysql
+  #     - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=jaeger-all-in-one:4317
+  #     - OTEL_EXPORTER_OTLP_INSECURE=true
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     consul: 
+  #       condition: service_started
+  #     mysql: 
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./app/email/conf/dev:/opt/gomall/email/conf/dev
+
+  # order:
+  #   image: "order:latest"
+  #   environment:
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_HOST=mysql
+  #     - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=jaeger-all-in-one:4317
+  #     - OTEL_EXPORTER_OTLP_INSECURE=true
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     consul: 
+  #       condition: service_started
+  #     mysql: 
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./app/order/conf/dev:/opt/gomall/order/conf/dev
+  
+  # payment:
+  #   image: "payment:latest"
+  #   environment:
+  #     - MYSQL_USER=root
+  #     - MYSQL_PASSWORD=root
+  #     - MYSQL_HOST=mysql
+  #     - OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=jaeger-all-in-one:4317
+  #     - OTEL_EXPORTER_OTLP_INSECURE=true
+  #     - GO_ENV=dev
+  #   depends_on:
+  #     consul: 
+  #       condition: service_started
+  #     mysql: 
+  #       condition: service_healthy
+  #   volumes:
+  #     - ./app/payment/conf/dev:/opt/gomall/payment/conf/dev
+  
+  #  make build-svc svc=payment v=latest
+  
+    
