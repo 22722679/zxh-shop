@@ -9,9 +9,9 @@ services:
     ports:
       - 3306:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=duibuqi.123
+      - MYSQL_ROOT_PASSWORD=Mysql_pqssword
       - MYSQL_USER=root
-      #- MYSQL_PASSWORD=duibuqi.123
+      #- MYSQL_PASSWORD=Mysql_password
       - MYSQL_HOST=192.168.28.133
   #   volumes:
   #     - ./db/sql/ini:/docker-entrypoint-initdb.d
