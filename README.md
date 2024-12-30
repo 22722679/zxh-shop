@@ -20,3 +20,20 @@
   redis缓存商品信息，减轻数据库压力，运用consul实现多模块分布式服务注册与发现，降低服务的耦合性。  
   基于protobuf的RPC系统定义接口和函数实现，使前后端能更快适配服务，支持多语言的开发。  
   使用NATS消息队列实现购物车添加后的事件通知功能。运用prometheus实现项目数据指标以及多种性能指标的监控。  
+## 技术栈
+  - 前端
+    - Hertz
+    - Html
+  - 后端
+    - Kitex
+    - consul
+    - Nats
+  - 数据库
+    - Mysql
+    - redis
+  - 通用
+    - protobuf
+    - Dokcer
+    - Go
+    - prometheus
+
