@@ -20,21 +20,21 @@
   基于protobuf的RPC系统定义接口和函数实现，使前后端能更快适配服务，支持多语言的开发。  
   使用NATS消息队列实现购物车添加后的事件通知功能。运用prometheus实现项目数据指标以及多种性能指标的监控。  
 ## 技术栈
- - 前端
-  - Hertz
-  - Html
- - 后端
-  - Kitex
-  - consul
-  - Nats
- - 数据库
-  - Mysql
-  - redis
- - 通用
-  - protobuf
-  - Dokcer
-  - Go
-  - prometheus
+  - 前端
+    - Hertz
+    - Html
+  - 后端
+    - Kitex
+    - consul
+    - Nats
+  - 数据库
+    - Mysql
+    - redis
+  - 通用
+    - protobuf
+    - Dokcer
+    - Go
+    - prometheus
 ## 基础环境
   - Go 1.23.2
   - Docker 1.13.1
