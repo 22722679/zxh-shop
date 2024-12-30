@@ -45,39 +45,20 @@
 
 ## 文件目录
 ```go
-├── config(配置信息)
+├── app(主要服务存放位置)
 │   ├── define.go
 │   └── video_user_info.go
-├── helper(Md5码,token,短信验证码)
-│   └── helper.go
-├── middleware(中间件)
-│   ├── auto.go (鉴权)
-│   └── zookeeper.go 
-├── model (结构层)
-│   ├── favorite.go
-│   ├── feed.go
-│   ├── init.go
-│   ├── message_basic.go
-│   ├── room_basic.go
-│   ├── user_basic.go
-│   └── user_room.go
-├── router(路由)
-│   └── router.go
-├── service(服务层)
-│   ├── chat.go
-│   ├── user_basic.go
-│   ├── favorite.go
-│   ├── user_basic.go
-│   ├── video_feed.go
-│   └── websocket.go
-├── test(测试)
-│   ├── mongo.go
-│   ├── redis.go
-│   ├── websocket.go
-│   └── zookeeper.go
-├── go.mod
-├── go.sum
-├── README.md
-└── main.go (主启动文件)
+├── common(模板函数存放)
+├── db (数据库创建语句log)
+├── demo(proto和thrift两种序列化协议测试)
+├── deploy(docker容器化部署)
+├── hello_world(测试)
+├── idl(protobuf序列化脚手架)
+├── rpc_gen(rpc调用关联)
+├── Makefile(make项目管理工具)
+├── docker-compose.yaml(docker配置文件)
+├── go.work
+├── go.work.sum
+└── README.md
 ```
 
