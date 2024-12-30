@@ -13,5 +13,4 @@
   - [版本控制](版本控制)
 
 # 网站地址
-  基于该链接访问到目前网站：[![zxiaohuselfshop.com]](http://8.153.71.196:8080)
-  [![zxiaohuselfshop.com](https://github.com/22722679/zxh-shop/blob/d0737fcb5c22edf18fd8e4f97ca2ed344ea6345f/app/frontend/static/image/logo-self.jpg)](http://8.153.71.196:8080)
+  基于该链接访问到目前网站：[[www.zxiaohuselfshop.com]](http://8.153.71.196:8080)
