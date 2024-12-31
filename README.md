@@ -68,3 +68,34 @@
 └── README.md
 ```
 
+## 项目启动步骤
+  1. 下载源码
+  ```sh
+    git clone https://github.com/22722679/zxh-shop.git
+  ```
+  2. 启动docker上部署的中间件(Mysql、Redis、consul、nats、prometheus等等)，我们使用了docker-compose 启动，需要自己配置相关文件(docker-compose.yaml)：
+  ```sh
+    docker-compose up
+  ```
+  3. 启动服务(使用make工具直接启动8个服务)
+  ```sh
+    make shop
+  ```
+
+## 项目作者
+  #### 张小虎
+
+## 版本控制
+该项目使用Git进行版本管理。您可以在repository参看当前可用版本。
+
+## 鸣谢
+  
+- [字节跳动青训营](https://youthcamp.bytedance.com/)
+- 感谢[cloudewego](https://www.cloudwego.cn/zh/)社区提供的框架支持
+
+
+
+
+
+
+
