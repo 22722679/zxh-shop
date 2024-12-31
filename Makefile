@@ -1,9 +1,9 @@
-g:
-	cd app/frontend && go run . 
-	cd app/cart && go run .
-	cd app/order && go run .
-	cd app/product && go run .
-	cd app/cart && go run .
-	cd app/payment && go run .
-	cd app/user && go run .
-	cd app/email && go run .
+shop:
+	nohup cd app/frontend && go run . &
+	nohup cd app/cart && go run . &
+	nohup cd app/order && go run . &
+	nohup cd app/product && go run . &
+	nohup cd app/cart && go run . &
+	nohup cd app/payment && go run . &
+	nohup cd app/user && go run . &
+	nohup cd app/email && go run . &
