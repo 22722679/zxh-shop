@@ -14,6 +14,7 @@
 
 ## 网站地址
   #### 该链接访问到目前网站：[www.zxiaohuselfshop.com](http://www.zxiaohuselfshop.com)
+  #### 基于该项目的自动化测试演示以及测试源码：[UI自动化测试演示](https://www.bilibili.com/video/BV19ScceHEMa/?vd_source=4cbd2d924b1efbce235b9f288896cf6f)，[测试源码](https://github.com/22722679/UI-automation-zxh-shop)
 
 ## 简介
   **基于Go语言的hertz、kitex框架开发的电商商城项目，实现了用户登录注册(jwt鉴权)等基础功能，商品管理、购物车、订单管理与支付等功能。**  
