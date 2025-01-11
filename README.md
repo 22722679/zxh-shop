@@ -13,7 +13,7 @@
   - [鸣谢](#鸣谢)
 
 ## 网站地址
-  #### 该链接访问到目前网站：[www.zxiaohuselfshop.com](http://8.153.71.196:8080)
+  #### 该链接访问到目前网站：[www.zxiaohuselfshop.com](http://www.zxiaohuselfshop.com)
 
 ## 简介
   **基于Go语言的hertz、kitex框架开发的电商商城项目，实现了用户登录注册(jwt鉴权)等基础功能，商品管理、购物车、订单管理与支付等功能。**  
